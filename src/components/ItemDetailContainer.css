@@ -1,0 +1,18 @@
+
+.catalogo{
+    position: absolute;
+    margin-top: 350px;
+    text-align: center;
+    width: 100%;
+    color: slateblue;
+    padding: 2em;
+}
+
+
+.ItemList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+    width: 100%;
+  }

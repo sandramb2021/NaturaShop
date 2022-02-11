@@ -1,0 +1,92 @@
+[
+    {
+        "id":1,
+        "image":"https://staticar.natura.com/cdn/ff/E4xGknSneabOGwNakvjBds532ALNzBzWJK6fJHkCwIA/1643856146/public/styles/medium/public/products/96896_1_7.jpg?itok=_7Y7PoJW",
+        "title":"Kaiak Oceano Eau de Toilette Masculino",
+        "descripcion": "La emoción única de explorar la inmensidad azul del fondo del mar. Notas frescas de algas marinas se combinan con la densidad del ámbar marino y maderas oscuras.",
+        "categoria":"Perfumeria",
+        "price": "4230",
+        "stock": "4"
+    },
+    {
+        "id":2,
+        "image":"https://staticar.natura.com/cdn/ff/qL2KRODDP2a6R5HyKI6nU4Rzp-CEE1XlD5C_7TuFAxY/1643862035/public/products/96897_1_15.jpg",
+        "title":"Kaiak Oceano Eau de Toilette Femenino",
+        "descripcion": "La emoción única de explorar los jardines de corales sumergidos en el fondo del mar. Un floral acuoso  con notas frescas de algas y matices afrutados, se unen a la densidad del ámbar marino.",
+        "categoria":"Perfumeria",
+        "price": "4230",
+        "stock": "10"
+    },
+    {
+        "id":3,
+        "image":"https://staticar.natura.com/cdn/ff/XXdWp9hJq20HSBTP0N3mQCfP25KFpIEuz6CTLUUt5Pk/1642207669/public/styles/medium/public/products/108315_1_7.jpg?itok=-hWTZdXw",
+        "title":"Kit Ekos Murumuru Reconstrucción",
+        "descripcion": "Con manteca de murumuru, que tiene propiedades reconstructivas y enriquecido con aminoácidos. Sus productos proporcionan un ritual de reconstrucción del cabello dañado",
+        "categoria":"Cabello",
+        "price": "2400",
+        "stock": "5"
+    },
+    {
+        "id":4,
+        "image":"https://staticar.natura.com/cdn/ff/_h11SY2wqzmT1ir40wKOJLLZ7f6qFq2a8nFj3dT1_cc/1643236218/public/products/15141_1_7.jpg",
+        "title":"Shampoo equilibrante Lumina",
+        "descripcion": "Repuesto. Cabello y cuero cabelludo limpios de forma equilibrada, sin oleosidad por más tiempo, ligeros y saludables desde la primera aplicación. Exclusiva Bíotecnología Pro-teia Activo antioleosidad, que reduce la oleosidad incluso después de 7 días de suspensión de uso**.",
+        "categoria":"Cabello",
+        "price": "548",
+        "stock": "3"
+    },
+    {
+        "id":5,
+        "image":"https://staticar.natura.com/cdn/ff/QT-tgIhCl45mRvjvb6vw96eLPlT4GHjcWeV7EgkwTbQ/1643854943/public/styles/medium/public/products/27383_1_23.jpg?itok=Mzu3vj0O",
+        "title":"Repuesto Shampoo Splack!",
+        "descripcion": "Repuesto de shampoo Naturé - Splack! Para cabellos lisos, otorga más brillo. 250 ml",
+        "categoria":"Cabello",
+        "price": "365",
+        "stock": "15"
+    },
+    {
+        "id":6,
+        "image":"https://staticar.natura.com/cdn/ff/q6FkbEE5inP_tlYfsZE_CGUsmySK3so55PO1GWmMdmE/1643854298/public/products/95756_1_12.jpg",
+        "title":"Máscara para Pestañas Secret Negro",
+        "descripcion": "Mayor volumen, alargamiento, definición y curvatura sin grumos hasta el final del día.",
+        "categoria":"Cosmeticos",
+        "price": "2695",
+        "stock": "1"
+    },
+    {
+        "id":7,
+        "image":"https://staticar.natura.com/cdn/ff/Hal5wSNRojKuNiG_CKMeyHmCzr9kkVAhQPjCEdaYzoU/1643389409/public/styles/medium/public/products/17276_1_13.jpg?itok=rZQOiDzO",
+        "title":"Labial extremo confort FPS 25",
+        "descripcion": "Una belleza que une ultracremosidad con la hidratación intensa.",
+        "categoria":"Cosmeticos",
+        "price": "1535",
+        "stock": "3"
+    },
+    {
+        "id":8,
+        "image":"https://staticar.natura.com/cdn/ff/K2mn_xtlz-ScdYK7SqwLlgykOw6noUCdSMh8PD5yWUM/1643380335/public/styles/medium/public/products/83986_1_4.jpg?itok=tptdauKa",
+        "title":"Polvo Iluminador Glow",
+        "descripcion": "Ilumina y da un aspecto saludable en la piel. Efecto radiante. Desde una piel iluminada hasta un efecto levemente bronceado.  ",
+        "categoria":"Cosmeticos",
+        "price": "860",
+        "stock": "4"
+    },
+    {
+        "id":9,
+        "image":"https://staticar.natura.com/cdn/ff/vrFwM3EQq_4_XMsGcvte_8l4GZj2_yvqxMhBUFxdCOM/1643857300/public/products/92590_1_2.jpg",
+        "title":"Paleta de sombras UNA",
+        "descripcion": "Alta cobertura y fijación por hasta 6 hs. Combina tonos mate y perlados para looks naturales y elaborados.Incorpora tecnología de micropartículas translúcidas que permiten ajustar los colores a cualquier tono de piel, otorgando un acabado natural.",
+        "categoria":"Cosmeticos",
+        "price": "3280",
+        "stock": "4"
+    },
+    {
+        "id":10,
+        "image":"https://staticar.natura.com/cdn/ff/QeKZSfaqBHEhHTjT3eZWC9hwNpcOxLBG35F4J9XZDFs/1643852441/public/products/91821_1_23.jpg",
+        "title":"Hidratante Facial Piel Mixta a Oleosa Natura Faces",
+        "descripcion": "¡El secreto para una piel saludable y lista para el día, con todo lo que necesitas! 1 Producto, 4 Beneficios. Su secreto para hidratar, uniformizar el tono de tu piel y protegerte contra rayos solares, logra una piel radiante para empezar el día.",
+        "categoria":"Cosmeticos",
+        "price": "885",
+        "stock": "4"
+    }
+]

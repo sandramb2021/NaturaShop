@@ -1,0 +1,55 @@
+
+.headerContainer{
+    /* background-color: rgba(160, 9, 122, 0.555);*/
+    background-color: rgb(190, 161, 205);
+    
+     width: 100%;
+     position: fixed;
+     backdrop-filter: blur(8px);
+     box-shadow: 0 0 10px black;
+     display: flex;
+     justify-content: center;
+     z-index: 100;
+   }
+   
+   .logo, .cart{
+     margin-top: 5px;
+     margin-bottom: 5px;
+     width: 20%;
+     text-align: center;
+   }
+ 
+   .cart{
+     display: flex;
+     align-items: center;
+     color:white;
+   }
+ 
+   .cart label{
+     margin: 10px;
+   }
+   .navbar{
+     margin: 35px 200px 35px 200px;
+     width: 60%;
+   }
+ 
+   .navbar ul{
+     list-style: none;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+   }
+   
+   .navbar ul li a{
+     text-decoration: none;
+     text-transform: uppercase;
+     color: white;
+   }
+   
+   
+   .navbar ul li a:hover {
+     color: rgb(90, 5, 79);
+     padding-top: 10px;
+     padding-bottom: 10px;
+     text-decoration: none;
+   }
