@@ -34,6 +34,7 @@ const ItemDetailContainer = () => {
                             price={product.price}
                             description={product.description} 
                             stock={product.stock}
+                            itemId={product.itemId}
                         /> 
                      : <p>Consultando producto....</p>}         
             </div>
