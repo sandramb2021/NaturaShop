@@ -1,6 +1,6 @@
 import React, { useState , useEffect}  from "react";
 import "./ItemDetailContainer.css";
-import  ItemDetail from "./ItemDetail";
+import ItemDetail from "./ItemDetail";
 import {  useParams } from 'react-router-dom'
 
 const ItemDetailContainer = () => {  
@@ -14,7 +14,8 @@ const ItemDetailContainer = () => {
                 const data = await response.json();
                                 
                 setProduct(data.find((item) => item.id === parseInt(id)));   
-                console.log("El producto", product);           
+                console.log("El producto", product);   
+                console.log("el id del producto" , id)        
             } catch (error) {
                 console.log(error)
             };
@@ -28,13 +29,13 @@ const ItemDetailContainer = () => {
                  {product ? 
                     
                         <ItemDetail 
-                            key={product.id}
+                            key={id}
                             title={product.title}
                             image={product.image}
                             price={product.price}
                             description={product.description} 
                             stock={product.stock}
-                            itemId={product.itemId}
+                            itemId={id}
                         /> 
                      : <p>Consultando producto....</p>}         
             </div>

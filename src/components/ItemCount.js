@@ -6,9 +6,10 @@ import {  Link } from "react-router-dom";
 
 function ItemCount({stock, initial,counter,onAdd,onIncrease,onDecrease}) {
     const {cart, addToCart} = useContext(cartContext)
-    
-    /*const [counter,setCounter]= useState(initial);
-    
+    console.log("estoy viendo si recibo counter ")
+    console.log(counter)
+    //const [counter,setCounter]= useState(initial);
+    /*
     const onIncrease =()=> {
         counter < stock ? setCounter(counter + 1) : setCounter(counter + 0)            
     }
@@ -26,7 +27,7 @@ function ItemCount({stock, initial,counter,onAdd,onIncrease,onDecrease}) {
             
             <div className="agrega-carrito-Container">
                {/* <button id="agregarAlCarrito" onClick={() => addToCart(counter)}>Comprar</button>*/}
-               <button id="agregarAlCarrito" onClick={onAdd(counter)}>Comprar</button>
+               <button id="agregarAlCarrito" onClick={() => onAdd(counter)}>Comprar</button>
                <Link to="/cart">
                     <button id="terminarCarrito" >Terminar mi compra</button>
                </Link>

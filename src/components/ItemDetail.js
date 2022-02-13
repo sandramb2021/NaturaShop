@@ -1,14 +1,17 @@
 import { render } from "@testing-library/react";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Component } from "react";
 import ItemCount  from "./ItemCount";
 import "./ItemDetail.css";
 import  {cartContext}  from "./cartContext";
+import ItemDetailContainer from "./ItemDetailContainer";
 
 
+const ItemDetail = (props) => {  
 
-export default class ItemDetail extends Component{
-   constructor(props){
+   const [counter, setCounter] = useState(1);
+   const {cart,addItem,removeItem} = useContext(cartContext);
+   /*constructor(props){
       super(props);
       this.state={
          counter:1,
@@ -38,32 +41,50 @@ export default class ItemDetail extends Component{
       
    } ;
   
-    
-    onIncrease =()=> {
-      
-      this.state.counter < this.state.stock ? this.setState({counter:this.state.counter+1}) : this.setState({counter:this.state.counter+0})           
-      console.log("counter mas ");
-      console.log(this.state.counter);
-      
-    }
-
-   onDecrease =()=> {
-      this.state.counter > 1 ? this.setState({counter:this.state.counter-1}) : this.setState({counter:1})           
-      console.log("counter menos");
-      console.log(this.state.counter);
-    }
-
    render()
    {            
-        
+        */
+      const onAdd = (quantityToAdd) => {
+         //const {addItem,removeItem} = useContext(cartContext);
+         console.log("cantidad: ", quantityToAdd);
+         console.log ("id :", props.itemId);
+         console.log(props);
+           
+         const subirAlCarro = {
+                  item: {props},
+                  quantity: quantityToAdd,
+                  itemId: props.itemId,
+         }
+         console.log(subirAlCarro);
+
+         addItem({props},quantityToAdd,props.itemId)
+         //this.setState({counter:this.state.counter+1});
+         console.log("estoy agregando al carro ");
+         //console.log(this);
+         
+      } ;
+
+     const onIncrease =() => {
+      
+         counter < props.stock ? setCounter(counter + 1) : setCounter(counter + 0)         
+         console.log("counter mas ");
+         console.log({counter});
+         
+       };
+   
+      const onDecrease = () => {
+         counter > 1 ? setCounter(counter - 1) : setCounter(1)            
+         console.log("counter menos");
+         console.log(counter);
+       };
 
          return (     
             <div className="product">
-                  <h2 className="title">{this.state.title}</h2>         
-                  <img className="image" alt={this.state.title} src={this.state.image}></img>
-                  <p className="price">${this.state.price}</p>
-                  <p className="description">{this.state.description}</p>
-                  <ItemCount stock={this.state.stock} initial={1} counter={this.state.counter} onAdd={this.onAdd} onIncrease={this.onIncrease} onDecrease={this.onDecrease}/>                
+                  <h2 className="title">{props.title}</h2>         
+                  <img className="image" alt={props.title} src={props.image}></img>
+                  <p className="price">${props.price}</p>
+                  <p className="description">{props.description}</p>
+                  <ItemCount stock={props.stock} initial={1} counter={counter} onAdd={onAdd} onIncrease={onIncrease} onDecrease={onDecrease}/>                
        
             {/*<cartContext.Consumer>
                {value => { 
@@ -73,5 +94,7 @@ export default class ItemDetail extends Component{
             </cartContext.Consumer>*/}
             </div>
          ) ;  
-   }
+  {/*} }*/}
 };
+
+export default ItemDetail;
