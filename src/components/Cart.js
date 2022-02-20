@@ -1,30 +1,54 @@
 
 import React ,{useContext} from "react";
 import "../index.css";
-import  {cartContext}  from "./cartContext";
+import { cartContext } from "./cartContext";
+import CartItem from "./CartItem";
+import "./Cart.css";
 
 
-const Cart = () => {
-    const {cart,removeItem} = useContext(cartContext);
-    console.log("Carro:", cart)
-
+function Cart() {
+    const {cart, removeItem, clear, precioTotal} = useContext(cartContext);
+        
     return (
         <div className="page">
-            <h2>Carro de compras</h2>
-            {/*cart.map((item) => {
-          return (
-            <div>
-               <p> 
-                   <label>Producto: {item.title}</label>
-                   <label>Cantidad: {item.quantity}</label>
-                   <label>Importe: {item.price * item.quantity}</label>
-                </p>
-                <button onClick={removeItem(item.itemId)}>Eliminar</button>
-                     
-            </div>
-          );
-        })*/}
-
+            <h2>Detalle de su compra</h2>
+            {cart.length > 0 ?           
+              (cart.map((producto) =>  {          
+                        let {quantity,itemId,item} = producto;
+                        return (
+                          <div>
+                          <ul>
+                            <CartItem 
+                              key={itemId}
+                              id={itemId}
+                              title={item.props.title}
+                              image={item.props.image}
+                              price={item.props.price}
+                              quantity={quantity}
+                            />
+                          </ul>
+                        </div> 
+                       
+                        );
+                      })
+                      
+            )            
+            
+            : (<p>Su carro está vacío</p>)}
+           
+           {cart.length > 0 ?
+                          (<div>
+                            <div className="importeTotal">
+                              Importe total de su compra: $ {precioTotal}
+                            </div>
+                            <div>
+                              <button onClick={clear}>Limpiar carrito</button>
+                              
+                              <button >Terminar la compra</button>
+                            </div>
+                          </div>)
+                          : <></>}
+            
         </div>
     );
 };

@@ -1,0 +1,43 @@
+.itemCart{
+    border-style: solid;
+    border-color: darkorchid;
+    border-width: 1px;
+    margin: 10px;
+    padding: 1em;
+    max-width: 800px;
+    
+}
+
+.itemCart li{
+    list-style: none;
+    width: 100%;
+}
+
+.itemCart div{
+    padding-left: 1em;
+}
+
+.imgCart{
+    width: 50px;
+    height: 50px;
+}
+
+.itemCard{
+    display: flex;
+}
+.subtotal{
+   text-align: right;
+   color:blueviolet;
+   font-weight: bold ;
+   width: 100px;
+}
+.prodCartDetail{
+    text-align: left;
+    width: 500px;
+}
+
+.delImg{
+    width: 15px;
+    height: 15px;
+    
+}

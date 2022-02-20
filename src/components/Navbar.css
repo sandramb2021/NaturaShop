@@ -27,7 +27,10 @@
  
    .cart label{
      margin: 10px;
+     color: white;
+     text-decoration: none;
    }
+   
    .navbar{
      margin: 35px 200px 35px 200px;
      width: 60%;

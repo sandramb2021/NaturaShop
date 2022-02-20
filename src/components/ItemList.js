@@ -7,7 +7,8 @@ const ItemList = ({ items }) => {
     console.log("Items en IL", items);
     return (
        <div className="ItemList">
-        {items.map((item) => {
+        {items.length ? (
+        items.map((item) => {
           return (
             <Item
               key={item.id}
@@ -18,7 +19,9 @@ const ItemList = ({ items }) => {
               description={item.description}              
             />
           );
-        })}
+        }))
+      :
+      ( <p>No se encontraron productos</p>)}
       </div>
     );
   };

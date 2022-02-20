@@ -10,17 +10,14 @@ const initialCart = [
 export const cartContext = createContext(initialCart);
 
 export const CartProvider = ({children}) => {
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState([]);
+    const [precioTotal, setPrecioTotal] = useState (0);
+   
 
     const addItem = (item, quantity, itemId) =>  
     {
-        const aux =isInCart(itemId);
-        console.log("aux:", aux);
-        const existeItem= cart.find((item) => item.itemId === parseInt(itemId))
-        console.log("existeItem:", existeItem ? existeItem : null);
-        console.log("existeItem:", existeItem ? existeItem.quantity : null);
-
-        if (!aux) {
+               
+        if (!isInCart(itemId)) {
            const itemAddToCart = {
               item: item,
               quantity: quantity,
@@ -30,34 +27,41 @@ export const CartProvider = ({children}) => {
            setCart([ ...cart, itemAddToCart ]);
            
         } else
-        {            
-            setCart(cart.map((item) => item.itemId === parseInt(itemId) ?
-           
-             {...item, quantity: existeItem.quantity + parseInt(item.quantity)}
-            
-             : {...item}
-            )
-            );
-            
-        }
+        {     
+            let newCart = [...cart];
+            let match =cart.find((item) => item.itemId === parseInt(itemId));
+            let idx = newCart.indexOf(match);
+ 
+            (newCart[idx].quantity+ parseInt(quantity))>parseInt(newCart[idx].item.props.stock)
+            ?  newCart[idx].quantity= parseInt(newCart[idx].item.props.stock)
+            : newCart[idx].quantity= newCart[idx].quantity + parseInt(quantity);
+        
+            setCart(newCart);
 
-        console.log(cart);
+        }
+        
+        const PrecioPorCantidad = parseInt(item.props.price) * parseInt(quantity);
+        setPrecioTotal(precioTotal + PrecioPorCantidad);
+        
     }
-        //isInCart(item.id) ? setCart({...cart,quantity}) : setCart(cart.push({item},quantity,item.itemId))
-    const removeItem = (itemId) => setCart(cart.filter(cart => cart.itemId !== parseInt(itemId)))
+        
+    const removeItem = (itemId) => {
+        const deletedItem=cart.find((item) => item.itemId === parseInt(itemId));
+        setCart(cart.filter(cart => cart.itemId !== parseInt(itemId)))
+        setPrecioTotal(precioTotal - deletedItem.item.props.price);
+    }
     
-    const clear = () => setCart([])
+    const clear = () =>  { 
+        setCart([]);        
+        setPrecioTotal(0);
+    }
+
     const isInCart = (itemId) => { 
-     
-        const existe= cart.find((x) => x.itemId === parseInt(itemId))
-                
-        return (
-            existe ? true : false
-        );
+        return cart.some((x) => x.itemId === parseInt(itemId))
     };
 
     return (
-        <cartContext.Provider value={{cart, addItem, removeItem, clear}}>
+        <cartContext.Provider value={{cart,precioTotal,addItem, removeItem, clear}}>
             {children}
         </cartContext.Provider>
     );
