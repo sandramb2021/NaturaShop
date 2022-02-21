@@ -4,10 +4,11 @@ import "../index.css";
 import { cartContext } from "./cartContext";
 import CartItem from "./CartItem";
 import "./Cart.css";
+import {Link} from "react-router-dom";
 
 
 function Cart() {
-    const {cart, removeItem, clear, precioTotal} = useContext(cartContext);
+    const {cart, endShopping, clear, precioTotal} = useContext(cartContext);
         
     return (
         <div className="page">
@@ -42,9 +43,12 @@ function Cart() {
                               Importe total de su compra: $ {precioTotal}
                             </div>
                             <div>
+                              <Link to={'/'}>
+                                <button >Ir a la Tienda</button>
+                              </Link>
                               <button onClick={clear}>Limpiar carrito</button>
                               
-                              <button >Terminar la compra</button>
+                              <button onClick={endShopping} >Terminar la compra</button>
                             </div>
                           </div>)
                           : <></>}

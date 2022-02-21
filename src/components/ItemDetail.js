@@ -55,12 +55,9 @@ const ItemDetail = (props) => {
                   quantity: quantityToAdd,
                   itemId: props.itemId,
          }
-         console.log(subirAlCarro);
-
+         
          addItem({props},quantityToAdd,props.itemId)
-         //this.setState({counter:this.state.counter+1});
-         console.log("estoy agregando al carro ");
-         //console.log(this);
+         return( <p>Producto agregado</p>)
          
       } ;
 

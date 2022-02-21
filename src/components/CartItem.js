@@ -6,8 +6,11 @@ import delImg from "../img/trash_64.png";
 
 
 const CartItem = ({ id, title, price, image,quantity }) => {
-    const {cart, removeItem, clear} = useContext(cartContext);
-    
+    const {cart, addItem,removeItem, clear} = useContext(cartContext);
+    const newCart=[...cart];
+    const newItem=cart.find(cart => cart.itemId === parseInt(id));
+    console.log("newItem:" ,newItem);
+
     return(
         <div className="itemCart">
             <li className="itemCard"> 
@@ -16,13 +19,17 @@ const CartItem = ({ id, title, price, image,quantity }) => {
                         <img className="imgCart" alt={title} src={image}></img>
                     </div>
                     <div className="prodCartDetail">
-                        <> {title} - {quantity} x ${price} </>
+                        <> {title} </><br />
+                        <><button className="itemCount-button" onClick={() => removeItem(id)} >-</button>
+                            {quantity}
+                            <button  className="itemCount-button" onClick={() => addItem(newItem.item,1, id,true)} >+</button>   
+                         x ${price} </>
                     </div>
                     
                     <div className="subtotal">= $ {(price * quantity).toFixed(2)}
                     </div>
                     <div>
-                        <button onClick={() => removeItem(id)}><img className ="delImg" src={delImg} alt="delete item"/></button>
+                        <button onClick={() => removeItem(id, true)}><img className ="delImg" src={delImg} alt="delete item"/></button>
                     </div>
              
             </li>
