@@ -1,3 +1,6 @@
+import React from 'react';
+import "../index.module.css";
+
 const Error = () => {
 	return (
 		<div>

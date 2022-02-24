@@ -1,0 +1,38 @@
+.importeTotal{
+    border-style: solid;
+    border-color: #a656b1;
+    border-width: 1px;
+    margin: 10px;
+    padding: 2em;
+    max-width: 800px;
+    color: white;
+    background-color: #a656b1;
+    font-weight: bold;
+    margin-left: 50px;
+    text-align: right;
+}
+
+
+.page{
+    position:absolute;
+    margin-top: 110px;
+  }
+
+
+  .buttonsContainer button{
+    background-color: #a656b1;
+    color: whitesmoke;
+    margin-left: 30px;
+    border-color: #a656b1;
+    border-width: thin;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    transition: all 0.5s;
+  }
+
+  .buttonsContainer button:hover{
+    background-color: #dda7e4;
+    color: #7f3d88;
+    border-color:#a656b1;
+}

@@ -1,9 +1,8 @@
 import React, { useState , useEffect}  from "react";
-import "./ItemListContainer.css";
+import styles from "./ItemListContainer.module.css";
 import ItemList from "./ItemList";
 import {  useParams } from 'react-router-dom'
-import "../index.css"
-//import {Spin} from '@douyinfe/semi-ui'
+
 
 
 const ItemListContainer = () => {  
@@ -36,7 +35,7 @@ const ItemListContainer = () => {
     },[categoria]);
 
     return(
-        <div className="catalogoItems page">
+        <div className={styles.catalogoItems}>
                 {typeof items === 'undefined' ? (<div><p>Loading....</p></div>   )
                      : <ItemList items={items} /> }
         </div>

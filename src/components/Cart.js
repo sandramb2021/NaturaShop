@@ -1,17 +1,17 @@
 
 import React ,{useContext} from "react";
-import "../index.css";
 import { cartContext } from "./cartContext";
 import CartItem from "./CartItem";
-import "./Cart.css";
+import styles from  "./Cart.module.css";
 import {Link} from "react-router-dom";
 
 
 function Cart() {
     const {cart, endShopping, clear, precioTotal} = useContext(cartContext);
-        
+     
+
     return (
-        <div className="page">
+        <div className={styles.page}>
             <h2>Detalle de su compra</h2>
             {cart.length > 0 ?           
               (cart.map((producto) =>  {          
@@ -39,10 +39,10 @@ function Cart() {
            
            {cart.length > 0 ?
                           (<div>
-                            <div className="importeTotal">
+                            <div className={styles.importeTotal}>
                               Importe total de su compra: $ {precioTotal}
                             </div>
-                            <div>
+                            <div className={styles.buttonsContainer}>
                               <Link to={'/'}>
                                 <button >Ir a la Tienda</button>
                               </Link>

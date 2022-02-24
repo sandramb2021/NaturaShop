@@ -1,97 +1,59 @@
-import { render } from "@testing-library/react";
+//import { render } from "@testing-library/react";
 import React, { useContext, useState } from "react";
-import { Component } from "react";
+//import { Component } from "react";
 import ItemCount  from "./ItemCount";
-import "./ItemDetail.css";
+import styles from "./ItemDetail.module.css";
 import  {cartContext}  from "./cartContext";
-import ItemDetailContainer from "./ItemDetailContainer";
+
 
 
 const ItemDetail = (props) => {  
 
    const [counter, setCounter] = useState(1);
-   const {cart,addItem,removeItem} = useContext(cartContext);
-   /*constructor(props){
-      super(props);
-      this.state={
-         counter:1,
-         title: props.title, 
-         price: props.price, 
-         image: props.image, 
-         description: props.description, 
-         stock: props.stock,
-         itemId: props.itemId,
-      };
-
-      this.onAdd=this.onAdd.bind(this);
-   }
-   
-   onAdd(quantityToAdd){
-      //const {addItem,removeItem} = useContext(cartContext);
-      console.log("cantidad: ");
-
-            console.log(quantityToAdd);
-            console.log ("id :");
-            console.log(this.state.itemId);
-            
-            
-      //this.setState({counter:this.state.counter+1});
-      console.log("estoy agregando al carro ");
-      console.log(this);
-      
-   } ;
-  
-   render()
-   {            
-        */
+   const {addItem} = useContext(cartContext);
+console.log("props",props);
       const onAdd = (quantityToAdd) => {
-         //const {addItem,removeItem} = useContext(cartContext);
-         console.log("cantidad: ", quantityToAdd);
-         console.log ("id :", props.itemId);
-         console.log(props);
-           
-         const subirAlCarro = {
+                 
+         /*const subirAlCarro = {
                   item: {props},
                   quantity: quantityToAdd,
                   itemId: props.itemId,
-         }
+         }*/
          
          addItem({props},quantityToAdd,props.itemId)
-         return( <p>Producto agregado</p>)
+         
          
       } ;
 
      const onIncrease =() => {
       
          counter < props.stock ? setCounter(counter + 1) : setCounter(counter + 0)         
-         console.log("counter mas ");
-         console.log({counter});
+        
          
        };
    
       const onDecrease = () => {
          counter > 1 ? setCounter(counter - 1) : setCounter(1)            
-         console.log("counter menos");
-         console.log(counter);
+         
        };
 
          return (     
-            <div className="product">
-                  <h2 className="title">{props.title}</h2>         
-                  <img className="image" alt={props.title} src={props.image}></img>
-                  <p className="price">${props.price}</p>
-                  <p className="description">{props.description}</p>
-                  <ItemCount stock={props.stock} initial={1} counter={counter} onAdd={onAdd} onIncrease={onIncrease} onDecrease={onDecrease}/>                
-       
-            {/*<cartContext.Consumer>
-               {value => { 
-               
-              
-               }}
-            </cartContext.Consumer>*/}
+            <div className={styles.product}>
+                  <div className={styles.imgDetails}>
+                     <img className={styles.image} alt={props.title} src={props.image}></img>
+                  </div>
+                  <div className={styles.productDetails}>
+                     <div>
+                        <h2 className={styles.title}>{props.title}</h2>         
+                        <p className={styles.description}>{props.descripcion}</p>
+                     </div>
+                     <div>
+                        <p className={styles.price}>${props.price}</p>
+                        <ItemCount stock={props.stock} initial={1} counter={counter} onAdd={onAdd} onIncrease={onIncrease} onDecrease={onDecrease}/>                
+                     </div>
+                  </div>
             </div>
          ) ;  
-  {/*} }*/}
 };
 
 export default ItemDetail;

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import './App.css';
+import React from 'react';
+import styles from './App.module.css';
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from './components/ItemDetailContainer';
-import { BrowserRouter, Routes, Redirect, Route, Link } from "react-router-dom";
-import {Error} from "./pages/Error"
+import { BrowserRouter, Routes,  Route } from "react-router-dom";
+import Error from "./pages/Error"
 import  Contacto  from './pages/Contacto';
 import {CartProvider} from "./components/cartContext"
 import Cart from "./components/Cart"
@@ -12,7 +12,7 @@ import Cart from "./components/Cart"
 function App() {
   
   return (
-    <div className="App">  
+    <div className={styles.App}>  
       <CartProvider >  
       <BrowserRouter>    
         <NavBar />
@@ -32,8 +32,8 @@ function App() {
             element={<ItemDetailContainer />}></Route>
           <Route path="contacto" element={<Contacto />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path='*'>
-					{/*}  <Error />*/}
+          <Route path='*' element={<Error />}>
+					  
 				  </Route>
         </Routes>
       </BrowserRouter>

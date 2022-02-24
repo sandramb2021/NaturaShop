@@ -1,34 +1,29 @@
 import React from 'react';
-import "../index.css";
+import styles from "./Contacto.module.css";
+import { Link } from "react-router-dom";
+import face from "../img/face.png";
+import instagram from "../img/instagram.png";
+import ws from "../img/ws.png";
 
 const Contacto = () => {
 	return (
-		<div className="page">
+		<div className={styles.page}>
 			<h1>Contactate con nosotros!</h1>
-			<p>Por Whatsapp: 1145552156 o al mail: natura@gamil.com
-
-
-
-
-
-				dgdgdfgd
-
-
-
-
-
-
-				dddddddddddddddddddddddddddd
+			<p><img className={styles.imgRS} src={ws}></img> 1145552156 </p>
+			
+			
+			<p>
+				<Link to="">
+					<img className={styles.imgRS}  src={face}></img>
+				</Link>
 			</p>
 			<p>
-				veamos si se ve
+				<Link to="">
+					<img className={styles.imgRS}  src={instagram}></img>
+				</Link>
 			</p>
-			<p>
-				veamos si se ve 2
-			</p>
-			<p>
-				veamos si se ve 3
-			</p>
+			<p>Mail: natura@gmail.com</p>
+			
 		</div>
 	)
 };

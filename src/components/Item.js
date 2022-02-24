@@ -1,30 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Item.css";
-import ItemDetailContainer from "./ItemDetailContainer";
+import styles from  "./Item.module.css";
+//import ItemDetailContainer from "./ItemDetailContainer";
 
 
-const Item = ({ id, title, price, image, description  }) => {  
-    const onDetail =() => {
+const Item = ({ id, title, price, image, descripcion  }) => {  
+   /* const onDetail =() => {
         const message =`Quieres ver más info del producto ${title}`;
         
-    };
+    };*/
     return (
         <Link to={`/products/${id}`}>
-            <div className="itemDetail">
-                <div className="itemDetail-imageContainer">
-                    <div className="itemDetail-image">
-                        <img className="image" alt={title} src={image}></img>
+            <div className={styles.itemDetail}>
+                <div >
+                    <div className={styles.itemDetailTitle}>
+                        <h2 className={styles.title}>{title}</h2>    
                     </div>
-                    <div className="itemDetail-desc">
-                        <h2 className="title">{title}</h2>       
-                        <div className="price-space"></div><div className="price-container">                                           
-                        <p className="price">${price}</p></div> 
-                        <p className="description">{description}</p>
+                    <div className={styles.itemDetailImage}>
+                        <img className={styles.image_card} alt={title} src={image}></img>
                     </div>
-                </div>
-                <div className="itemDetail-detalles">
-                    <button id="masDetalles" onClick={onDetail}>Ver más detalles</button>
+                    <div className={styles.itemDetailDetalles}>
+                        <p className={styles.price}>${price}</p>
+                        <button id="boton-mas-detalles" >Ver más detalles</button>
+                    </div>
                 </div>
             </div>        
         </Link>

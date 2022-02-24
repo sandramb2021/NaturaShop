@@ -1,5 +1,5 @@
 import React, { useState , useEffect}  from "react";
-import "./ItemDetailContainer.css";
+import styles from "./ItemDetailContainer.module.css";
 import ItemDetail from "./ItemDetail";
 import {  useParams } from 'react-router-dom'
 
@@ -14,8 +14,7 @@ const ItemDetailContainer = () => {
                 const data = await response.json();
                                 
                 setProduct(data.find((item) => item.id === parseInt(id)));   
-                console.log("El producto", product);   
-                console.log("el id del producto" , id)        
+                
             } catch (error) {
                 console.log(error)
             };
@@ -23,9 +22,11 @@ const ItemDetailContainer = () => {
         getProduct();
     },[id]);
 
+console.log("IDetail", product);
+
     return(
-        <div className="catalogo">                
-            <div className="ItemList">
+        <div className={styles.catalogo}>                
+            <div className={styles.ItemList}>
                  {product ? 
                     
                         <ItemDetail 
@@ -33,7 +34,7 @@ const ItemDetailContainer = () => {
                             title={product.title}
                             image={product.image}
                             price={product.price}
-                            description={product.description} 
+                            descripcion={product.descripcion} 
                             stock={product.stock}
                             itemId={id}
                         /> 
