@@ -4,11 +4,8 @@ import styles from  "./Item.module.css";
 //import ItemDetailContainer from "./ItemDetailContainer";
 
 
-const Item = ({ id, title, price, image, descripcion  }) => {  
-   /* const onDetail =() => {
-        const message =`Quieres ver más info del producto ${title}`;
-        
-    };*/
+const Item = ({ id, title, price, image  }) => {  
+   
     return (
         <Link to={`/products/${id}`}>
             <div className={styles.itemDetail}>

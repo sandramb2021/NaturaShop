@@ -16,12 +16,12 @@ const ItemList = ({ items }) => {
               title={item.title}
               image={item.image}
               price={item.price}
-              descripcion={item.descripcion}              
+                         
             />
           );
         }))
       :
-      ( <p>No se encontraron productos</p>)}
+      ( <p>Loading.....</p>)}
       </div>
     );
   };

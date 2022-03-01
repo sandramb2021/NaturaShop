@@ -1,9 +1,8 @@
 .itemDetail {
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     flex-wrap: wrap;
     width: 300px;
     height: 400px;

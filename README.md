@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# NaturaShop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Es una aplicación creada utilizando [Create React App](https://github.com/facebook/create-react-app), para vender productos cosméticos de la marca Natura.
 
-## Available Scripts
+## Guía de instalación
 
-In the project directory, you can run:
+Puedes descargar el proyecto y ejecutar:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+La aplicación iniciará y podrás accederla a través de tu navegador, con la dirección:\
+[http://localhost:3000](http://localhost:3000) .
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Se carga inicialmente en el Home del sitio, donde podrás acceder a TODOS los productos de la marca\
 
-### `npm test`
+## Más acerca de NaturaShop
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Puedes acceder al catálogo de productos, en función de su categoría: Cabellos, Cosméticos y Perfumería, haciendo click en la barra de navegación, en el link respectivo. 
 
-### `npm run build`
+Si te interesa algún producto de los visualizados, puedes hacer click sobre él para ver algunos detalles más del mismo.\
+Si así lo haces, te mostrará una breve descripción, su precio y la posibilidad de comprar las unidades que desees, siempre que haya stock.\
+Desde allí mismo puedes ir al carrito, para ver todas tus compras, del mismo modo que si hacés click en el carrito de la barra de menú de navegación.\
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Cuando accedes a tu carrito, verás la lista de productos que deseas, con las cantidades elegidas, un cálculo total por producto, y un total por todo el carrito. Tendrás posibilidad de eliminar un producto si así lo deseas, como también,\ modificar la cantidad de algún producto de tu carrito, siempre que haya stock, si agregas, como eliminarlo del carrito si eliges 0 como cantidad.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Desde el carrito, podrás:
+* Volver a la tienda, con todos los productos\
+* Vaciar el carrito\
+* Terminar la compra, lo que te mostrará un mensaje del éxito de tu compra, y limpiará el carrito, por si quieres seguir comprando nuestros productos.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Repositorio de Datos
 
-### `npm run eject`
+Para el almacenamiento y manejo de la información de los productos, se usó Firestore de Firebase.\
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Seguridad
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Está en fase de desarrollo un esquema de seguridad para ingresar al sitio con un usuario de autenticación.\
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Pago de la compra
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+No está implementado el cobro. Momentáneamente se maneja vía transferencia bancaria o contra entrega personalmente.

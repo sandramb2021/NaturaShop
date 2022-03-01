@@ -1,43 +1,41 @@
 import React, { useState , useEffect}  from "react";
 import styles from "./ItemListContainer.module.css";
 import ItemList from "./ItemList";
-import {  useParams } from 'react-router-dom'
-
+import {  useParams } from 'react-router-dom';
+import { getDocs, collection } from "firebase/firestore";
+import { db } from "../firebase/firebase";
 
 
 const ItemListContainer = () => {  
-  const [items, setItems] = useState([]);
-  const { categoria  } = useParams()
+    const [items, setItems] = useState([]);
+    const { categoria  } = useParams();
+    
 
     useEffect(() => {
+      try {
         const getItems = async () => {
+            const querySnapshot = await getDocs(collection(db, "items"));
+                    
+            const products = querySnapshot.docs.map((item) => ({
+              id: item.id,
+              ...item.data(),
+            }));
+            if (categoria) { setItems(products.filter(item => item.categoria.toLowerCase() === (categoria))) }
+                else {setItems(products);};
+           
+          };
+          
+            getItems();
+          } 
+          catch (error) {
+            console.log("we have this error: ", error);
+          }
 
-            try {
-                const response = await fetch("http://localhost:3000/data.json");
-                const data = await response.json();
-                console.log("Los items", data);
-                
-                const datos=data;
-                if (categoria) { setItems(data.filter(item => item.categoria.toLowerCase() === (categoria))) }
-                else {setItems(datos);};
-                
-                //const response = await fetch("https://fakestoreapi.com/products");
-                //const data = await response.data;
-                //console.log("Los items", data);
-               // setItems();   
-                      
-            } catch (error) {
-                console.log(error)
-            };
-        };
-
-        getItems();
     },[categoria]);
 
     return(
         <div className={styles.catalogoItems}>
-                {typeof items === 'undefined' ? (<div><p>Loading....</p></div>   )
-                     : <ItemList items={items} /> }
+          { items ?  <ItemList items={items} />: (<div><p>Loading....</p></div>) }
         </div>
     );
   }

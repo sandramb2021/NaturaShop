@@ -15,13 +15,13 @@ function Cart() {
             <h2>Detalle de su compra</h2>
             {cart.length > 0 ?           
               (cart.map((producto) =>  {          
-                        let {quantity,itemId,item} = producto;
+                        let {quantity,id,item} = producto;
                         return (
                           <div>
                           <ul>
                             <CartItem 
-                              key={itemId}
-                              id={itemId}
+                              key={id}
+                              id={id}
                               title={item.props.title}
                               image={item.props.image}
                               price={item.props.price}

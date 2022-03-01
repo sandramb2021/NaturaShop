@@ -7,7 +7,7 @@ import delImg from "../img/trash_64.png";
 const CartItem = ({ id, title, price, image,quantity }) => {
     const {cart, addItem,removeItem} = useContext(cartContext);
     
-    const newItem=cart.find(cart => cart.itemId === parseInt(id));
+    const newItem=cart.find(cart => cart.id === id);
     
     return(
         <div className={styles.itemCart}>

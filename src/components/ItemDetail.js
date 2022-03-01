@@ -11,31 +11,18 @@ const ItemDetail = (props) => {
 
    const [counter, setCounter] = useState(1);
    const {addItem} = useContext(cartContext);
-console.log("props",props);
-      const onAdd = (quantityToAdd) => {
-                 
-         /*const subirAlCarro = {
-                  item: {props},
-                  quantity: quantityToAdd,
-                  itemId: props.itemId,
-         }*/
-         
-         addItem({props},quantityToAdd,props.itemId)
-         
-         
+   
+   const onAdd = (quantityToAdd) => {
+      addItem({props},quantityToAdd,props.itemId)
       } ;
 
-     const onIncrease =() => {
-      
+   const onIncrease =() => {
          counter < props.stock ? setCounter(counter + 1) : setCounter(counter + 0)         
-        
-         
        };
    
-      const onDecrease = () => {
-         counter > 1 ? setCounter(counter - 1) : setCounter(1)            
-         
-       };
+   const onDecrease = () => {
+      counter > 1 ? setCounter(counter - 1) : setCounter(1)            
+      };
 
          return (     
             <div className={styles.product}>

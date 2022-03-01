@@ -1,7 +1,9 @@
 import React, { useState , useEffect}  from "react";
 import styles from "./ItemDetailContainer.module.css";
 import ItemDetail from "./ItemDetail";
-import {  useParams } from 'react-router-dom'
+import {  useParams } from 'react-router-dom';
+import { getDocs, collection } from "firebase/firestore";
+import { db } from "../firebase/firebase";
 
 const ItemDetailContainer = () => {  
     const [product, setProduct] = useState({});
@@ -10,10 +12,15 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         const getProduct = async () => {
             try {
-                const response = await fetch("http://localhost:3000/data.json");
-                const data = await response.json();
-                                
-                setProduct(data.find((item) => item.id === parseInt(id)));   
+               
+                const querySnapshot = await getDocs(collection(db, "items"));
+                                            
+                const products = querySnapshot.docs.map((item) => ({
+                    id: item.id,
+                    ...item.data(),
+                }));
+                
+                setProduct(products.find((item) => item.id === id));   
                 
             } catch (error) {
                 console.log(error)
@@ -22,7 +29,6 @@ const ItemDetailContainer = () => {
         getProduct();
     },[id]);
 
-console.log("IDetail", product);
 
     return(
         <div className={styles.catalogo}>                
@@ -34,6 +40,7 @@ console.log("IDetail", product);
                             title={product.title}
                             image={product.image}
                             price={product.price}
+                            categoria={product.categoria}
                             descripcion={product.descripcion} 
                             stock={product.stock}
                             itemId={id}

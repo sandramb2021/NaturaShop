@@ -9,17 +9,17 @@ const Contacto = () => {
 	return (
 		<div className={styles.page}>
 			<h1>Contactate con nosotros!</h1>
-			<p><img className={styles.imgRS} src={ws}></img> 1145552156 </p>
+			<p><img className={styles.imgRS} src={ws} alt="Whatsapp"></img> 1145552156 </p>
 			
 			
 			<p>
 				<Link to="">
-					<img className={styles.imgRS}  src={face}></img>
+					<img className={styles.imgRS}  src={face} alt="Facebook"></img>
 				</Link>
 			</p>
 			<p>
 				<Link to="">
-					<img className={styles.imgRS}  src={instagram}></img>
+					<img className={styles.imgRS}  src={instagram} alt="Instagram"></img>
 				</Link>
 			</p>
 			<p>Mail: natura@gmail.com</p>

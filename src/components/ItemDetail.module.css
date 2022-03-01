@@ -44,7 +44,7 @@
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     background-color: #f2ccf7;
     color: black;
     height: 100%;
