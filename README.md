@@ -24,17 +24,17 @@ Desde allí mismo puedes ir al carrito, para ver todas tus compras, del mismo mo
 Cuando accedes a tu carrito, verás la lista de productos que deseas, con las cantidades elegidas, un cálculo total por producto, y un total por todo el carrito. Tendrás posibilidad de eliminar un producto si así lo deseas, como también,\ modificar la cantidad de algún producto de tu carrito, siempre que haya stock, si agregas, como eliminarlo del carrito si eliges 0 como cantidad.
 
 Desde el carrito, podrás:
-* Volver a la tienda, con todos los productos\
-* Vaciar el carrito\
-* Terminar la compra, lo que te mostrará un mensaje del éxito de tu compra, y limpiará el carrito, por si quieres seguir comprando nuestros productos.
+* Volver a la tienda, con todos los productos
+* Vaciar el carrito
+* Terminar la compra, generará una orden de compra, con el detalle de items adquiridos, y mostrará un mensaje del éxito de tu compra con el nro. de pedido, y limpiará el carrito, por si quieres seguir comprando nuestros productos.
 
 ### Repositorio de Datos
 
-Para el almacenamiento y manejo de la información de los productos, se usó Firestore de Firebase.\
+Para el almacenamiento y manejo de la información de los productos, se usó Firestore de Firebase.
 
 ### Seguridad
 
-Está en fase de desarrollo un esquema de seguridad para ingresar al sitio con un usuario de autenticación.\
+Está en fase de desarrollo un esquema de seguridad para ingresar al sitio con un usuario de autenticación.
 
 ### Pago de la compra
 
